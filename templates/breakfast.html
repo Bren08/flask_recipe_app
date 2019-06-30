@@ -1,0 +1,15 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <h1>Breakfast Recipes</h1>
+        {% for recipes in breakfast %}
+            <h2><strong>{{recipes.breakfast_name}}</strong></h2>
+            <h3>Ingredients:</h3>{{recipes.breakfast_ingredients}}
+            <h3>Method:</h3>{{recipes.breakfast_method}}
+            <h3>Nutrition:</h3>{{recipes.breakfast_nutrition}}
+        {% endfor %}
+    </body>
+</html>

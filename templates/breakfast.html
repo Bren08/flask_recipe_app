@@ -1,15 +1,33 @@
-<html>
-    <head>
+{% extends 'base.html' %}
+{% block content %}
 
-    </head>
+<h3 class="center-align">Breakfast Recipes</h3>
 
-    <body>
-        <h1>Breakfast Recipes</h1>
-        {% for recipes in breakfast %}
-            <h2><strong>{{recipes.breakfast_name}}</strong></h2>
-            <h3>Ingredients:</h3>{{recipes.breakfast_ingredients}}
-            <h3>Method:</h3>{{recipes.breakfast_method}}
-            <h3>Nutrition:</h3>{{recipes.breakfast_nutrition}}
-        {% endfor %}
-    </body>
-</html>
+
+<ul class="collapsible" data-collapsible="accordion">
+    {% for recipes in breakfast %}
+    <li>
+      <div class="collapsible-header"><i class="material-icons">view_week</i>
+        <h4>{{ recipes.breakfast_name }}</h4>
+      </div>
+      <div class="collapsible-body">
+            <h5>Ingredients:</h5>
+            {% for ingredient in recipes.breakfast_ingredients %}
+            <span>
+                {{ ingredient }} 
+            </span><br />
+          {% endfor %}
+      <br>
+      <br>
+      <h5>Method:</h5>
+      {% for method in recipes.breakfast_method %}
+      <span>
+          {{ method }} 
+      </span><br>
+      {% endfor %}
+      </div>
+    </li>
+{% endfor %}
+    
+</ul>
+{% endblock %}

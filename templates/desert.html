@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block desert %}
+
+<h3 class="center-align">Desert Recipes</h3>
+
+
+<ul class="collapsible" data-collapsible="accordion">
+    {% for recipes in desert %}
+    <li>
+      <div class="collapsible-header"><i class="material-icons">view_module</i>
+        <h4>{{ recipes.desert_name }}</h4>
+      </div>
+      <div class="collapsible-body">
+            <h5>Ingredients:</h5>
+            {% for ingredient in recipes.desert_ingredients %}
+              <span>
+                  {{ ingredient }} 
+              </span><br />
+            {% endfor %}
+        <br>
+        <br>
+        <h5>Method:</h5>
+        {% for method in recipes.desert_method %}
+        <span>
+            {{ method }} 
+        </span><br>
+        {% endfor %}
+      </div>
+    </li>
+{% endfor %}
+    
+</ul>
+{% endblock %}

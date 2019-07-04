@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block content %}
+<h3 class="center-align">Add Recipe</h3><br>
+<div class="row">
+    <form action="" method="POST" class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">restaurant_menu</i>
+                <input id="recipe_name" name="recipe_name" type="text" class="validate">
+                <label for="icon_prefix">Recipe Name:</label>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">shopping_basket</i>
+                    <textarea type="textarea" name="recipe_ingredients" id="recipe_ingredients" type="text"
+                        class="materialize-textarea"></textarea>
+                    <label for="icon_telephone">Ingredients:</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">subject</i>
+                    <textarea type="textarea" name="recipe_method" id="recipe_method" type="text"
+                        class="materialize-textarea"></textarea>
+                    <label for="icon_telephone">Method:</label>
+                </div>
+            </div>
+            <div class="input-field col s12">
+                <i class="material-icons prefix">poll</i>
+                <input id="recipe_nutrition" name="recipe_nutrition" id="recipe_nutrition" type="text" class="validate">
+                <label for="icon_prefix">Nutrition:</label>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

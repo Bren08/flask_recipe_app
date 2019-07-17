@@ -1,0 +1,98 @@
+{% extends 'base.html' %} {% block content %}
+
+<!-- Recipe submit form-->
+
+
+<h3 class="center-align">Add Recipe</h3><br>
+<div class="row">
+    <form action="{{url_for('insert_recipe')}}" method="POST" class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">poll</i>
+                <select id="category" name="category_name">
+                    <option value="" disabled selected>Choose your category</option>
+                    {% for cat in categories %}
+                    <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                    {% endfor %}
+                </select>
+                <label>Cuisine category</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">restaurant_menu</i>
+                <input id="title" name="title" type="text" class="validate">
+                <label>Title:</label>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">shopping_basket</i>
+                    <textarea type="textarea" name="ingredients" id="ingredients" type="text"
+                        class="materialize-textarea"></textarea>
+                    <label>Ingredients:</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">description</i>
+                    <textarea type="textarea" name="method" id="method" type="text"
+                        class="materialize-textarea"></textarea>
+                    <label>Method:</label>
+                </div>
+            </div>
+            <div class="input-field col s6">
+                <i class="material-icons prefix">poll</i>
+                <input name="nutrition" id="nutrition" type="text" class="validate">
+                <label>Nutrition:</label>
+            </div>
+            <div class="input-field col s6">
+                <i class="material-icons prefix">poll</i>
+                <input name="views" id="views" type="text" class="validate">
+                <label>Views:</label>
+            </div>
+            <div class="input-field col s6">
+                <i class="material-icons prefix">poll</i>
+                <input name="cooking_time" id="cooking_time" type="text" class="validate">
+                <label>Cooking time:</label>
+            </div>
+            <div class="input-field col s6">
+                <div id="matfix">
+                    <i class="material-icons prefix">today</i>
+                    <input id="date_entered" name="date_entered" type="text" class="datepicker">
+                    <label for="icon_prefix">Date entered:</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s8">
+                    <i class="material-icons prefix">poll</i>
+                    <input id="author" name="author" type="text" class="validate">
+                    <label>Author:</label>
+                </div>
+                <div class="input-field col s4">
+                    <div class="insert_img">
+                        <div class="row"><br>
+                            <input type="file" id="fileupload"><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="input_field col s12">
+                    <div class="row"><br><br>
+                        <button class="btn waves-effect waves-light sml_button" type="submit">Submit
+                            Recipe
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+<footer class="">
+    <div class="container">
+        <p class=""></p>
+    </div>
+</footer>
+{% endblock %}

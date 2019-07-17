@@ -1,0 +1,31 @@
+/* body {
+    background-color: red;
+} 
+ #no_white_space {
+    white-space: pre; 
+}*/
+.responsive {
+    width: 100%;
+    height: auto;
+  }
+  .edit_button {
+      margin-bottom: 30px;
+      margin-left: 100px;
+      margin-top: 15px;
+      border-radius: 20px;
+    }
+   .add_button {
+       margin-left: 50%;
+       border-radius: 20px;
+   }
+   .del_button {
+       margin-left: 400px;
+       margin-bottom: 30px;
+       margin-top: 15px;
+       border-radius: 20px;
+   }
+  .recipes {
+      font-size: 20px;
+  }
+  
+  

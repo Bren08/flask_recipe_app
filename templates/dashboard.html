@@ -1,0 +1,69 @@
+{% extends 'base.html' %} {% block content %}
+
+<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script type="text/javascript">
+    Highcharts.chart('container', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: 'Most popular cooking ingredients today'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                }
+            }
+        },
+        series: [{
+            name: 'Ingredients',
+            colorByPoint: true,
+            data: [{
+                name: 'Others',
+                y: 61.41,
+                sliced: true,
+                selected: true
+            }, {
+                name: 'Sugar',
+                y: 11.84
+            }, {
+                name: 'Salt',
+                y: 10.85
+            }, {
+                name: 'Eggs',
+                y: 4.67
+            }, {
+                name: 'Onions',
+                y: 4.18
+            }, {
+                name: 'Tomatoes',
+                y: 1.64
+            }, {
+                name: 'Flour',
+                y: 1.6
+            }, {
+                name: 'Milk',
+                y: 1.2
+            }, {
+                name: 'Butter',
+                y: 2.61
+            }]
+        }]
+    });
+</script>
+
+{% endblock %}

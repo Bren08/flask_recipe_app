@@ -1,23 +1,38 @@
 import os
-from flask import Flask, render_template, redirect, session, request, url_for
+from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from pymongo import TEXT
 
 app = Flask(__name__)
+
+
 
 app.config["MONGO_DBNAME"] = 'recipe_manager'
 app.config["MONGO_URI"] = 'mongodb+srv://boot:b00tUser@myfirstcluster-qugxt.mongodb.net/recipe_manager?retryWrites=true&w=majority'
 
 mongo = PyMongo(app)
 
+recipes =  mongo.db.recipes
+the_recipe = mongo.db.recipes
 
-@app.route('/login', methods=["GET","POST"])
+mongo.db.recipes.create_index([('$**', 'text')])
+
+
+@app.route('/landing')
+def landing():
+    return render_template('landing.html')
+
+@app.route('/')
+@app.route('/login')
 def login():
-    if request.method == "POST":
-        username = request.form["username"]
-        session["user"] = username
-        return redirect(url_for('view_recipe'))
-    return render_template('login.html', recipes=mongo.db.users.find())
+    return render_template('login.html')
+
+@app.route('/register', methods=['POST'])
+def register():
+    users = mongo.db.users
+    users.insert_one(request.form.to_dict())
+    return redirect(url_for('login'))
 
 
 @app.route('/view_recipe')
@@ -26,8 +41,6 @@ def view_recipe():
    return render_template("cuisine_recipe.html", recipes=records)
 
 
-
-   
 @app.route('/add_recipe')
 def add_recipe():
     return render_template("insert_recipe.html", categories=mongo.db.categories.find())
@@ -62,8 +75,27 @@ def update_recipe(recipe_id):
 
 @app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
-    mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
+    mongo.db.recipes.delete_one({'_id': ObjectId(recipe_id)})
     return redirect(url_for('view_recipe'))
+
+@app.route('/search', methods=['GET', 'POST'])
+def search():
+    
+    title = request.form.get('search')
+    find = ({ '$text': { '$search': title }})
+    results = mongo.db.recipes.find(find)
+    return render_template('cuisine_recipe.html', 
+    recipes=results, count=results.count())
+
+@app.route('/view_count/<recipe_id>', methods=['GET', 'POST'])
+def view_count(recipe_id):
+    view_count = mongo.db.recipes.find({"_id": ObjectId(recipe_id)})
+    mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, {"$inc": {"views": 1}})
+    return render_template('view_recipe.html', recipe=view_count)
+
+@app.route('/dash')
+def dash():
+    return render_template("dashboard.html")
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

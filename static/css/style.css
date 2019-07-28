@@ -4,6 +4,63 @@
  #no_white_space {
     white-space: pre; 
 }*/
+.material-icon {
+    margin-left: 200px;
+}
+#search {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 120px;
+    color: white;
+}
+.collapsible-body {
+    background-color: #d6eceb; 
+}
+
+.collapsible-header {
+    background-color: #bceae6;
+}
+
+.white {
+    background-color: #778d8a !important;
+}
+
+/* #custom-button {
+    padding: 10px;
+    color: white;
+    background-color: #009578;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+  } */
+  
+  #custom-button:hover {
+    background-color: #00b28f;
+  }
+  
+  #custom-text {
+    margin-left: 10px;
+    font-family: sans-serif;
+    color: #aaa;
+  }
+
+h5 {
+    font-size: 18px;
+    font-family: Verdana, sans-serif;
+} 
+
+nav ul a {
+    font-size: 1.5em;
+}
+
+.input-field label {
+    color: #e5e6e6 !important;
+}
+
+nav .input-field input {
+    border: #d6eceb;
+}
+
 .responsive {
     width: 100%;
     height: auto;
@@ -11,21 +68,30 @@
   .edit_button {
       margin-bottom: 30px;
       margin-left: 100px;
-      margin-top: 15px;
+      margin-top: 25px;
       border-radius: 20px;
+      font-size: 13px;
     }
-   .add_button {
-       margin-left: 50%;
-       border-radius: 20px;
-   }
+   
    .del_button {
-       margin-left: 400px;
+       margin-left: 90px;
        margin-bottom: 30px;
-       margin-top: 15px;
+       margin-top: 25px;
        border-radius: 20px;
+       font-size: 12px;
    }
-  .recipes {
+   .like_button {
+    border-radius: 20px;
+}
+   a {
+        color: white;
+   }
+  /* .recipes {
       font-size: 20px;
-  }
+  } */
   
+  /* #SearchNavBar, #SearchItemsContainer
+{
+    display: none;
+} */
   

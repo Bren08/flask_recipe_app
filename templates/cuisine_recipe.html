@@ -8,13 +8,11 @@
   {% for recipe in recipes %}
 
   <li>
-    <div class="collapsible-header" id="no_white_space"><i class="material-icons">view_week</i>
+    <div class="title" id="no_white_space"><i class="material-icons">view_week</i>
       <div class="row">
         <div class="col s6">
-            <button class="material-icons like_button" name="{{ recipe.views }}" type="submit" method="POST">
-                <i>thumb_up<strong>{{recipe.views}}</strong></i></button>
           <h4 class="recipe_category"><i><strong>{{ recipe.recipe_category }}</strong></i></h4>
-          <h5 class="recipes">{{ recipe.title }}</h5>
+          <h5 class="recipes"><a href="{{ url_for('view_individual_recipe', recipe_id=recipe._id) }}">{{ recipe.title }}</a></h5>
         </div>
         <div class="col s3">
           <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"
@@ -29,7 +27,7 @@
         
       </div>
     </div>
-    <div class="collapsible-body">
+    <!-- <div class="collapsible-body">
       <h5 class="recipes">Category:</h5>
       {{ recipe.recipe_category }}
       <h5 class="recipes">Ingredients:</h5>
@@ -44,7 +42,7 @@
       {{ recipe.nutrition }}
       <h5 class="recipes">Author:</h5>
       {{ recipe.author }}
-    </div>
+    </div> -->
   </li>
 
   {% endfor %}

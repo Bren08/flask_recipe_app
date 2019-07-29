@@ -3,7 +3,7 @@
 <!-- Recipe edit form-->
 
 <div class="row">
-    <h3 class="center-align">Edit Recipe</h3><br>
+    <h3 class="center-align">{{ recipe.title }}</h3><br>
     <div class="row">
         <form action="{{url_for('insert_recipe', recipe_id=recipe._id)}}" method="POST" class="col s12">
             <div class="row">

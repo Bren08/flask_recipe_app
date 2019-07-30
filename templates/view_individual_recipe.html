@@ -8,11 +8,11 @@
         <div class="{{url_for('insert_recipe', recipe_id=recipe._id)}}" method="POST" class="col s12">
             <div class="row">
                 <div class="input-field col s12">
-                        <i class="material-icons prefix">restaurant_menu</i>
-                        <textarea type="text" name="recipe_category" id="recipe_category" readonly
-                            class="materialize-textarea">{{ recipe.recipe_category }}</textarea>
-                        <label>Category:</label>
-                    </div>
+                    <i class="material-icons prefix">restaurant_menu</i>
+                    <textarea type="text" name="recipe_category" id="recipe_category" readonly
+                        class="materialize-textarea">{{ recipe.recipe_category }}</textarea>
+                    <label>Category:</label>
+                </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
@@ -32,43 +32,40 @@
             </div>
 
             <div class="input-field col s6">
-                    <i class="material-icons prefix">today</i>
-                    <textarea type="text" name="nutrition" id="nutrition" readonly
-                        class="materialize-textarea">{{ recipe.nutrition }}</textarea>
-                    <label>Views:</label>
+                <i class="material-icons prefix">today</i>
+                <textarea type="text" name="nutrition" id="nutrition" readonly
+                    class="materialize-textarea">{{ recipe.nutrition }}</textarea>
+                <label>Nutrition:</label>
             </div>
             <div class="input-field col s6">
-                    <i class="material-icons prefix">today</i>
-                    <textarea type="text" name="views" id="views" readonly
-                        class="materialize-textarea">{{ recipe.views }}</textarea>
-                    <label>Views:</label>
+                <i class="material-icons prefix">today</i>
+                <textarea type="text" name="views" id="views" readonly
+                    class="materialize-textarea">{{ recipe.views }}</textarea>
+                <label>Views:</label>
             </div>
             <div class="input-field col s6">
-                    <i class="material-icons prefix">today</i>
-                    <textarea type="text" name="cooking_time" id="cooking_time" readonly
-                        class="materialize-textarea">{{ recipe.cooking_time }}</textarea>
-                    <label>Cooking time:</label>
+                <i class="material-icons prefix">today</i>
+                <textarea type="text" name="cooking_time" id="cooking_time" readonly
+                    class="materialize-textarea">{{ recipe.cooking_time }}</textarea>
+                <label>Cooking time:</label>
             </div>
             <div class="input-field col s6">
-                
-                    <i class="material-icons prefix">today</i>
-                        <textarea type="text" name="date_entered" id="date_entered" readonly
-                            class="materialize-textarea">{{ recipe.date_entered }}</textarea>
-                        <label>Date added:</label>
-                
-            </div>
-            
-                <div class="input-field col s6">
-                        <i class="material-icons prefix">today</i>
-                        <textarea type="text" name="author" id="author" readonly
-                            class="materialize-textarea">{{ recipe.author }}</textarea>
-                        <label>Author:</label>
-                </div>
-                
-                
 
-</div>
-</div>
+                <i class="material-icons prefix">today</i>
+                <textarea type="text" name="date_entered" id="date_entered" readonly
+                    class="materialize-textarea">{{ recipe.date_entered }}</textarea>
+                <label>Date added:</label>
+
+            </div>
+
+            <div class="input-field col s6">
+                <i class="material-icons prefix">today</i>
+                <textarea type="text" name="author" id="author" readonly
+                    class="materialize-textarea">{{ recipe.author }}</textarea>
+                <label>Author:</label>
+            </div>
+        </div>
+    </div>
 </div>
 
 {% endblock %}

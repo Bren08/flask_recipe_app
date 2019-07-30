@@ -86,12 +86,10 @@ nav .input-field input {
    a {
         color: white;
    }
-  /* .recipes {
-      font-size: 20px;
-  } */
-  
-  /* #SearchNavBar, #SearchItemsContainer
-{
-    display: none;
-} */
+ 
+   .card .card-image img {
+    width: 100%;
+    height: 700px;
+   }
+
   

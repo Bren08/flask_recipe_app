@@ -15,6 +15,7 @@ mongo = PyMongo(app)
 
 recipes =  mongo.db.recipes
 the_recipe = mongo.db.recipes
+categories = mongo.db.categories
 
 mongo.db.recipes.create_index([('$**', 'text')])
 
@@ -24,9 +25,10 @@ def landing():
     return render_template('landing.html')
 
 @app.route('/')
-@app.route('/login')
-def login():
-    return render_template('login.html')
+@app.route('/view_categories')
+def view_categories():
+    category=type(mongo.db.categories.find())
+    return render_template('categories.html', categories=category)
 
 @app.route('/register', methods=['POST'])
 def register():
@@ -77,6 +79,7 @@ def update_recipe(recipe_id):
         'nutrition':request.form.get('nutrition'),
         'views':request.form.get('views'),
         'cooking_time':request.form.get('cooking_time'),
+        'date_entered':request.form.get('date_entered'),
         'author':request.form.get('author'),
     })
     return redirect(url_for('view_recipe'))

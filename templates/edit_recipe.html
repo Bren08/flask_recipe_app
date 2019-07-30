@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">restaurant_menu</i>
-                    <input id="recipe_category" name="recipe_category" type="text" class="validate">
+                    <input id="recipe_category" name="recipe_category" value="{{ recipe.recipe_category }}" type="text" class="validate">
                     <label>Category:</label>
                 </div>
             </div>
@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">description</i>
-                    <textarea type="textarea" name="method" id="method" type="text"
+                    <textarea type="textarea" rows="12" cols="500" name="method" id="method" type="text"
                         class="materialize-textarea">{{ recipe.method }}</textarea>
                     <label>Method:</label>
                 </div>
@@ -55,7 +55,7 @@
             <div class="input-field col s6">
                 <div id="matfix">
                     <i class="material-icons prefix">today</i>
-                    <input id="date_entered" name="date_entered" type="text" class="datepicker">
+                    <input id="date_entered" name="date_entered" type="text" class="datepicker" value="{{ date_edited }}">
                     <label for="icon_prefix">Date edited:</label>
                 </div>
             </div>
@@ -66,11 +66,9 @@
                     <label>Author:</label>
                 </div>
                 <div class="input-field col s4">
-                    <div class="insert_img">
-                        <div class="row"><br>
-                            <input type="file" id="fileupload"><br>
-                        </div>
-                    </div>
+                        <i class="material-icons prefix">poll</i>
+                        <input id="img_url" name="img_url" type="url" class="validate">
+                        <label>Insert image URL:</label>
                 </div>
                 <div class="input_field col s12">
                     <div class="row"><br><br>

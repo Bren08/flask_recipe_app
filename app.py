@@ -9,7 +9,8 @@ app = Flask(__name__)
 
 
 app.config["MONGO_DBNAME"] = 'recipe_manager'
-app.config["MONGO_URI"] = 'mongodb+srv://boot:b00tUser@myfirstcluster-qugxt.mongodb.net/recipe_manager?retryWrites=true&w=majority'
+app.config.from_object('config.BaseConfig')
+
 
 mongo = PyMongo(app)
 

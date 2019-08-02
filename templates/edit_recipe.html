@@ -9,7 +9,8 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">restaurant_menu</i>
-                    <input id="recipe_category" name="recipe_category" value="{{ recipe.recipe_category }}" type="text" class="validate">
+                    <input id="recipe_category" name="recipe_category" value="{{ recipe.recipe_category }}" type="text"
+                        class="validate">
                     <label>Category:</label>
                 </div>
             </div>
@@ -49,38 +50,40 @@
             </div>
             <div class="input-field col s6">
                 <i class="material-icons prefix">poll</i>
-                <input name="cooking_time" id="cooking_time" type="text" class="validate" value="{{ recipe.cooking_time }}">
+                <input name="cooking_time" id="cooking_time" type="text" class="validate"
+                    value="{{ recipe.cooking_time }}">
                 <label>Cooking time:</label>
             </div>
             <div class="input-field col s6">
                 <div id="matfix">
                     <i class="material-icons prefix">today</i>
-                    <input id="date_entered" name="date_entered" type="text" class="datepicker" value="{{ date_edited }}">
+                    <input id="date_entered" name="date_entered" type="text" class="datepicker"
+                        value="{{ date_edited }}">
                     <label for="icon_prefix">Date edited:</label>
                 </div>
             </div>
-            
-                <div class="input-field col s6">
-                    <i class="material-icons prefix">poll</i>
-                    <input id="author" name="author" type="text" class="validate" value="{{ recipe.author }}">
-                    <label>Author:</label>
-                </div>
-                <div class="input-field col s4">
-                        <i class="material-icons prefix">poll</i>
-                        <input id="img_url" name="img_url" type="url" class="validate">
-                        <label>Insert image URL:</label>
-                </div>
-                <div class="input_field col s12">
-                    <div class="row"><br><br>
-                        <button class="btn waves-effect waves-light sml_button" type="submit">Submit
-                            Recipe
-                            <i class="material-icons right">send</i>
-                        </button>
-                    </div>
-                </div>
 
-</div>
-</form>
+            <div class="input-field col s6">
+                <i class="material-icons prefix">poll</i>
+                <input id="author" name="author" type="text" class="validate" value="{{ recipe.author }}">
+                <label>Author:</label>
+            </div>
+            <div class="input-field col s4">
+                <i class="material-icons prefix">poll</i>
+                <input id="img_url" name="img_url" type="url" class="validate">
+                <label>Insert image URL:</label>
+            </div>
+            <div class="input_field col s12">
+                <div class="row"><br><br>
+                    <button class="btn waves-effect waves-light sml_button" type="submit">Submit
+                        Recipe
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+            </div>
+
+    </div>
+    </form>
 </div>
 
 {% endblock %}

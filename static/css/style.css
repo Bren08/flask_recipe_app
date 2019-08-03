@@ -1,4 +1,4 @@
-body {
+/* body {
     margin: 0px;
     height: auto;
 }
@@ -78,4 +78,8 @@ a {
 .row .col.s6 {
        width: 45%;
    }
-  
+   */
+
+   .row {
+       display: flex;
+   }

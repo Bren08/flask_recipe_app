@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+  <title>Recipe's in a Flask</title>
+
+</head>
+
+<body>
+  <header>
+    <nav>
+
+      <div class="nav-wrapper teal lighten">
+        <a href="{{ url_for('landing') }}" class="brand-logo">Recipe's in a Flask</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+          <li><a href="{{ url_for('view_recipe') }}">Home</a></li>
+          <li><a href="{{ url_for('add_recipe') }}">Add recipe</a></li>
+          <li><a href="{{ url_for('view_categories') }}">Categories</a></li>
+          <li><a href="{{ url_for('dash') }}">Dashboard</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="{{ url_for('view_recipe') }}">Home</a></li>
+          <li><a href="{{ url_for('add_recipe') }}">Add recipe</a></li>
+          <li><a href="{{ url_for('view_categories') }}">Categories</a></li>
+          <li><a href="{{ url_for('dash') }}">Dashboard</a></li>
+        </ul>
+
+      </div>
+      <div class="nav-wrapper">
+        <div class="row">
+          <div class="col-s6">
+            <form action="{{ url_for('search')}}" method="POST">
+              <div class="input-field">
+                <input id="search" name="search" placeholder="Type here to search recipes.." required>
+              </div>
+          </div>
+        </div>
+        </form>
+      </div>
+    </nav>
+
+    <footer class="page-footer teal lighten">
+            <div class="container">
+              <div class="row">
+                <div class="col l6 s12">
+                  <h5 class="white-text">Footer Content</h5>
+                  <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                  <h5 class="white-text">Links</h5>
+                  <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright teal lighten">
+              <div class="container ">
+                © 2019 Copyright Text
+                <a class="white-text text-lighten- right" href="#!">More Links</a>
+              </div>
+            </div>
+          </footer>
+        
+        
+        
+        
+        
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+          <script type="text/javascript">
+            $(document).ready(function () {
+              $('.collapsible').collapsible();
+              $('select').material_select();
+              $(".button-collapse").sideNav();
+              $('.parallax').parallax();
+              $('input.autocomplete').autocomplete({
+                data: {
+                  "Apple": null,
+                  "Microsoft": null,
+                  "Google": 'https://placehold.it/250x250'
+                },
+              });
+        
+            });
+        
+            $('.datepicker').pickadate({
+              selectMonths: true, // Creates a dropdown to control month
+              selectYears: 15, // Creates a dropdown of 15 years to control year,
+              today: 'Today',
+              clear: 'Clear',
+              close: 'Ok',
+              closeOnSelect: false // Close upon selecting a date,
+            });
+        
+            document.getElementById("matfix").addEventListener("click", function (e) {
+              e.stopPropagation();
+            });
+        
+        
+        
+        
+          </script>
+        </body>
+        
+        </html>

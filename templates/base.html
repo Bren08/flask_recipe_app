@@ -45,18 +45,9 @@
       </div>
     </nav>
   </header>
-  <div class="parallax-container" style="z-index:-1;">
-    <div class="parallax"><img src="/static/background-chillies-color-1435895.jpg"></div>
-  </div>
-  <div class="section white">
-    <div class="row container">
-      {% block content %} {% endblock %}
-    </div>
-  </div>
-  <div class="parallax-container">
-    <div class="parallax"><img src="/static/background-chillies-color-1435895.jpg"></div>
-  </div>
 
+  {% block content %} {% endblock %}
+  
   <footer class="page-footer teal lighten">
     <div class="container">
       <div class="row">
@@ -91,10 +82,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <script type="text/javascript">
     $(document).ready(function () {
-      $('.collapsible').collapsible();
-      $('select').material_select();
       $(".button-collapse").sideNav();
-      $('.parallax').parallax();
       $('input.autocomplete').autocomplete({
         data: {
           "Apple": null,
@@ -124,4 +112,4 @@
   </script>
 </body>
 
-</html>
+</html> 

@@ -20,9 +20,9 @@ categories = mongo.db.categories
 mongo.db.recipes.create_index([('$**', 'text')])
 
 
-@app.route('/landing')
-def landing():
-    return render_template('landing.html')
+@app.route('/index')
+def index():
+    return render_template('index.html')
 
 @app.route('/')
 @app.route('/view_categories')

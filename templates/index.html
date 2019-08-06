@@ -69,10 +69,9 @@
       <br>
       <br>
       <div class="row">
-        <form action="{{ url_for('landing') }}" method="POST">
+        <form action="{{ url_for('index') }}" method="POST">
           <div class="row col-md-3">
             <div class="input-field">
-              <strong> Welcome: </strong>
               <input id="username" name="username" type="text" placeholder="Just click on the enter button.." required>
               <button class="btn waves-effect waves-light float-left grey" type="submit">
                 <a href="{{ url_for('view_recipe') }}" id="submit" type="submit" value="enter">Enter</a>

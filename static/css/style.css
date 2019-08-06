@@ -1,8 +1,10 @@
-/* body {
-    margin: 0px;
-    height: auto;
+body {
+    background-color: #e8f5e9;
+    /* margin: 0px;
+    height: auto; */
 }
 
+/*
 html {
     font-family: verdana, sans-serif;
 }
@@ -67,10 +69,7 @@ nav .input-field input {
        font-size: 12px;
    }
 
-a {
-        color: white;
-   }
- 
+
 .card .card-image img {
     width: 100%;
     height: 700px;
@@ -79,7 +78,32 @@ a {
        width: 45%;
    }
    */
-
-   .row {
-       display: flex;
+   
+   .btn {
+       padding: 10px;
+       color: white;    
+       border-radius: 5px;
+       line-height: 1.0;
+       margin: 10px;
    }
+   .jumbotron {
+       margin-bottom: 0px;
+   }
+   nav ul a:hover{
+       background-color: none;
+       color: #2d2d2d;
+       text-decoration: none;
+   }
+   a {
+       color: white;
+   }
+   a:hover {
+       color: #2d2d2d;
+       text-decoration: none;
+   }
+
+   h4 {
+       color: #44220b !important;
+   }
+
+   

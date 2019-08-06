@@ -3,6 +3,7 @@ from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from pymongo import TEXT
+from datetime import datetime
 
 
 app = Flask(__name__)
@@ -29,13 +30,6 @@ def view_categories():
     category=type(mongo.db.categories.find())
     return render_template('categories.html', categories=category)
 
-@app.route('/register', methods=['POST'])
-def register():
-    users = mongo.db.users
-    users.insert_one(request.form.to_dict())
-    return redirect(url_for('login'))
-
-
 @app.route('/view_recipe')
 def view_recipe():
    records=list(mongo.db.recipes.find())
@@ -57,7 +51,9 @@ def add_recipe():
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
     recipes = mongo.db.recipes
-    recipes.insert_one(request.form.to_dict())
+    payload = request.form.to_dict()
+    payload.update({"views": 0})
+    recipes.insert_one(payload)
     return redirect(url_for('view_recipe'))
 
 @app.route('/edit_recipe/<recipe_id>', methods=['GET','POST'])
@@ -71,6 +67,7 @@ def update_recipe(recipe_id):
     recipes = mongo.db.recipes
     recipes.update( {"_id": ObjectId(recipe_id)},
     {
+        'img_url':request.form.get('img_url'),
         'category_name':request.form.get('category_name'),
         'title':request.form.get('title'),
         'ingredients':request.form.get('ingredients'),

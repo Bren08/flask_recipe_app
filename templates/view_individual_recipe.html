@@ -1,8 +1,9 @@
 {% extends 'base.html' %} {% block content %}
 
 <!-- View an Individual Recipe -->
-
-<div class="row">
+<div class="container">
+    <div class="row">
+    </div>
     <h3 class="center-align">{{ recipe.title }}</h3><br>
     <div class="row">
         <div class="{{url_for('insert_recipe', recipe_id=recipe._id)}}" method="POST" class="col s12">
@@ -63,6 +64,12 @@
                 <textarea type="text" name="author" id="author" readonly
                     class="materialize-textarea">{{ recipe.author }}</textarea>
                 <label>Author:</label>
+            </div>
+            <div class="input-field col s6">
+                <i class="material-icons prefix">today</i>
+                <textarea type="url" name="img_url" id="img_url" readonly
+                    class="materialize-textarea">{{ recipe.img_url }}</textarea>
+                <label>Image URL:</label>
             </div>
         </div>
     </div>

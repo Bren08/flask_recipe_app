@@ -1,88 +1,90 @@
 {% extends 'base.html' %} {% block content %}
 
 <!-- Recipe edit form-->
-
-<div class="row">
-    <h3 class="center-align">{{ recipe.title }}</h3><br>
+<div class="container">
     <div class="row">
-        <form action="{{url_for('insert_recipe', recipe_id=recipe._id)}}" method="POST" class="col s12">
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">restaurant_menu</i>
-                    <input id="recipe_category" name="recipe_category" value="{{ recipe.recipe_category }}" type="text"
-                        class="validate">
-                    <label>Category:</label>
+        <h2 class="col-md-12 center-align">Edit Recipe</h2><br><br><br>
+        <h3 class="center-align">{{ recipe.title }}</h3><br><br><br>
+        <div class="row">
+            <form action="{{url_for('insert_recipe', recipe_id=recipe._id)}}" method="POST" class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">restaurant_menu</i>
+                        <input id="recipe_category" name="recipe_category" value="{{ recipe.recipe_category }}"
+                            type="text" class="validate">
+                        <label>Category:</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">restaurant_menu</i>
-                    <input id="title" name="title" type="text" class="validate" value="{{ recipe.title }}">
-                    <label>Recipe Name:</label>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">restaurant_menu</i>
+                        <input id="title" name="title" type="text" class="validate" value="{{ recipe.title }}">
+                        <label>Recipe Name:</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">shopping_basket</i>
-                    <textarea type="textarea" name="ingredients" id="ingredients" type="text"
-                        class="materialize-textarea">{{ recipe.ingredients }}</textarea>
-                    <label>Ingredients:</label>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">shopping_basket</i>
+                        <textarea type="textarea" name="ingredients" id="ingredients" type="text"
+                            class="materialize-textarea">{{ recipe.ingredients }}</textarea>
+                        <label>Ingredients:</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">description</i>
-                    <textarea type="textarea" rows="12" cols="500" name="method" id="method" type="text"
-                        class="materialize-textarea">{{ recipe.method }}</textarea>
-                    <label>Method:</label>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">description</i>
+                        <textarea type="textarea" rows="12" cols="500" name="method" id="method" type="text"
+                            class="materialize-textarea">{{ recipe.method }}</textarea>
+                        <label>Method:</label>
+                    </div>
                 </div>
-            </div>
 
-            <div class="input-field col s6">
-                <i class="material-icons prefix">poll</i>
-                <input name="nutrition" id="nutrition" type="text" class="validate" value="{{ recipe.nutrition }}">
-                <label>Nutrition:</label>
-            </div>
-            <div class="input-field col s6">
-                <i class="material-icons prefix">poll</i>
-                <input name="views" id="views" type="number" class="validate" value="{{ recipe.views }}">
-                <label>Views:</label>
-            </div>
-            <div class="input-field col s6">
-                <i class="material-icons prefix">poll</i>
-                <input name="cooking_time" id="cooking_time" type="text" class="validate" value="{{ recipe.cooking_time }}">
-                <label>Cooking time:</label>
-            </div>
-            <div class="input-field col s6">
-                <div id="matfix">
-                    <i class="material-icons prefix">today</i>
-                    <input id="date_entered" name="date_entered" type="text" class="datepicker"
-                        value="{{ date_edited }}">
-                    <label for="icon_prefix">Date edited:</label>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">poll</i>
+                    <input name="nutrition" id="nutrition" type="text" class="validate" value="{{ recipe.nutrition }}">
+                    <label>Nutrition:</label>
                 </div>
-            </div>
-
-            <div class="input-field col s6">
-                <i class="material-icons prefix">poll</i>
-                <input id="author" name="author" type="text" class="validate" value="{{ recipe.author }}">
-                <label>Author:</label>
-            </div>
-            <div class="input-field col s4">
-                <i class="material-icons prefix">poll</i>
-                <input id="img_url" name="img_url" type="url" class="validate">
-                <label>Insert image URL:</label>
-            </div>
-            <div class="input_field col s12">
-                <div class="row"><br><br>
-                    <button class="btn waves-effect waves-light sml_button" type="submit">Submit
-                        Recipe
-                        <i class="material-icons right">send</i>
-                    </button>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">poll</i>
+                    <input name="views" id="views" type="number" class="validate" value="{{ recipe.views }}">
+                    <label>Views:</label>
                 </div>
-            </div>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">poll</i>
+                    <input name="cooking_time" id="cooking_time" type="text" class="validate"
+                        value="{{ recipe.cooking_time }}">
+                    <label>Cooking time:</label>
+                </div>
+                <div class="input-field col s6">
+                    <div id="matfix">
+                        <i class="material-icons prefix">today</i>
+                        <input id="date_entered" name="date_entered" type="text" class="datepicker"
+                            value="{{ date_edited }}">
+                        <label for="icon_prefix">Date edited:</label>
+                    </div>
+                </div>
 
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">poll</i>
+                    <input id="author" name="author" type="text" class="validate" value="{{ recipe.author }}">
+                    <label>Author:</label>
+                </div>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">poll</i>
+                    <input id="img_url" name="img_url" type="url" class="validate">
+                    <label>Image URL:</label>
+                </div>
+                <div class="input_field col s12">
+                    <div class="row"><br><br><br><br>
+                        <button class="btn waves-effect waves-light sml_button grey" type="submit">Submit
+                            Recipe
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </div>
+
+        </div>
+        </form>
     </div>
-    </form>
 </div>
-
 {% endblock %}

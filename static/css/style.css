@@ -106,4 +106,8 @@ nav .input-field input {
        color: #44220b !important;
    }
 
-   
+   @media (max-width: 576px) {
+       nav .brand-logo {
+           font-size: 15px;
+       }
+   }

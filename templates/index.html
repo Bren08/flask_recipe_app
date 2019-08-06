@@ -60,7 +60,7 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col md-12">
+      <div class="col s12">
 
         <h1 class="display-1">My Recipe Cookbook</h1>
 
@@ -70,9 +70,9 @@
       <br>
       <div class="row">
         <form action="{{ url_for('index') }}" method="POST">
-          <div class="row col-md-3">
+          <div class="row col s6">
             <div class="input-field">
-              <input id="username" name="username" type="text" placeholder="Just click on the enter button.." required>
+              <input id="username" name="username" type="text" placeholder="Just click on the enter button.." required readonly>
               <button class="btn waves-effect waves-light float-left grey" type="submit">
                 <a href="{{ url_for('view_recipe') }}" id="submit" type="submit" value="enter">Enter</a>
               </button>

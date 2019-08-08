@@ -131,6 +131,7 @@ p {
        border-radius: 5px;
        line-height: 1.0;
        margin: 10px;
+       width: 100%;
    }
 
    /* Footer */

@@ -2,9 +2,9 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}" type="text/css" />
   <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
@@ -17,19 +17,15 @@
 
   <header>
     <nav>
-
       <div class="nav-wrapper  grey lighten-1">
         <a href="{{ url_for('index') }}" class="brand-logo">My Recipe Cookbook</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-
           <li><a href="{{ url_for('view_recipe') }}">Home</a></li>
           <li><a href="{{ url_for('add_recipe') }}">Add recipe</a></li>
           <li><a href="{{ url_for('view_categories') }}">Categories</a></li>
           <li><a href="{{ url_for('dash') }}">Dashboard</a></li>
         </ul>
-
         <ul class="side-nav" id="mobile-demo">
           <li><a href="{{ url_for('view_recipe') }}">Home</a></li>
           <li><a href="{{ url_for('add_recipe') }}">Add recipe</a></li>
@@ -38,16 +34,17 @@
         </ul>
       </div>
     </nav>
-
   </header>
 
   <div class="nav-wrapper">
-    <div class="row">
-      <div class="col-md-3">
+    <div class="row search-input">
+      <div class="col-md-12">
         <form action="{{ url_for('search')}}" method="POST">
-          <div class="input-field">
-            <input id="search" name="search" placeholder="Search through recipes.." required>
-            <button class="btn waves-effect waves-light grey" type="submit">Search</button>
+          <div class="input-field-search-recipes">
+            <input id="search" name="search" placeholder="Type keyword here to search through recipes.." required>
+            <div class="center-align">
+              <button class="btn waves-effect waves-light grey" type="submit">Search</button>
+            </div>            
           </div>
       </div>
     </div>
@@ -57,11 +54,10 @@
 
   {% block content %} {% endblock %}
 
-
   <footer class="page-footer text-center grey">
     <div class="container">
       <div class="row centre-footer">
-        <div class="col-xs-12">
+        <div class="col-xs-12 links">
           <h5 class="white-text">Links:</h5>
           <ul>
             <li><a href="{{ url_for('view_recipe') }}">Home</a></li>
@@ -72,23 +68,17 @@
         </div>
       </div>
     </div>
-
     <div class="footer-copyright grey ">
 
-      © 2019 Copyright My Recipe Cookbook - Milestone Project 3 - By: Brendan O'Brien
-
+      <div class="copyright" >© 2019 Copyright My Recipe Cookbook - Milestone Project 3 - By: Brendan O'Brien</div>
     </div>
-
   </footer>
-
-
-
-
-
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
   <script type="text/javascript">
     $(document).ready(function () {
       $(".button-collapse").sideNav();
@@ -115,9 +105,6 @@
     document.getElementById("matfix").addEventListener("click", function (e) {
       e.stopPropagation();
     });
-
-
-
 
   </script>
 </body>

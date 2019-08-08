@@ -1,113 +1,169 @@
 body {
     background-color: #e8f5e9;
-    /* margin: 0px;
-    height: auto; */
-}
-
-/*
-html {
+    margin: 0;
+    padding: 0;
     font-family: verdana, sans-serif;
 }
-.material-icon {
-    margin-left: 200px;
-}
-#search {
-    text-align: center;
-    font-size: 30px;
-    margin-top: 120px;
-    color: white;
-}
-.white {
-    background-color: #bbaaa6 !important;
-}
-
-#custom-text {
-    margin-left: 10px;
-    font-family: sans-serif;
-    color: #aaa;
-  }
-
-h3 {
-    font-family: verdana, sans-serif;
-}
-
-h5 {
-    font-size: 18px;
-    font-family: Verdana, sans-serif;
-} 
+/* Navbar */
 
 nav ul a {
-    font-size: 1.5em;
+    font-size: 18px;
 }
 
-.input-field label {
-    color: #e5e6e6 !important;
+nav ul a:hover{
+    background-color: none;
+    color: #2d2d2d;
+    text-decoration: none;
 }
 
-nav .input-field input {
-    border: #d6eceb;
+/* Search Recipe field */
+
+.search-input, .copyright, .links {
+    width: 50%;
+    min-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
 }
 
-.responsive {
+#search::-webkit-input-placeholder {
+    text-align: center;
+ }
+ 
+ #search:-moz-placeholder { /* Firefox 18- */
+    text-align: center;  
+ }
+ 
+ #search::-moz-placeholder {  /* Firefox 19+ */
+    text-align: center;  
+ }
+ 
+ #search:-ms-input-placeholder {  
+    text-align: center; 
+ }
+
+/* Main header */
+
+.jumbotron {
+    background-color: #8080804d;
+}
+
+.jumbo-header {
+  font-size: 80px;
+  font-weight: 700;
+  margin-top: 100px;
+  color: white;
+}
+
+p {
+    font-size: 20px;
+}
+
+/* Landing page */
+
+ .background-container {
+    background-image: url("https://images.pexels.com/photos/1435895/pexels-photo-1435895.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #999;
+    height: -webkit-fill-available;
+    height: -moz-available;
+    height: fill-available;
     width: 100%;
-    height: auto;
+  }
+  
+  .landing-header {
+    margin-top: 400px;
+    font-size: 65px;
+    color: white;
+    text-align: center;
+}
+
+   .enter-site {
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+      font-size: 30px;
+      background-color: transparent;
+      margin-left: 100px;
   }
 
-.edit_button {
-      margin-bottom: 30px;
-      margin-left: 100px;
-      margin-top: 25px;
-      border-radius: 20px;
-      font-size: 13px;
-    }
+  #username {
+      background-color: #00000042;
+  }
 
-.del_button {
-       margin-left: 90px;
-       margin-bottom: 30px;
-       margin-top: 25px;
-       border-radius: 20px;
-       font-size: 12px;
-   }
+  #username::-webkit-input-placeholder {
+    text-align: center;
+ }
+ 
+ #username:-moz-placeholder { /* Firefox 18- */
+    text-align: center;  
+ }
+ 
+ #username::-moz-placeholder {  /* Firefox 19+ */
+    text-align: center;  
+ }
+ 
+ #username:-ms-input-placeholder {  
+    text-align: center; 
+ }
 
+  /* Recipe name hyperlink */
 
-.card .card-image img {
-    width: 100%;
-    height: 700px;
-   }
-.row .col.s6 {
-       width: 45%;
-   }
-   */
-   
-   .btn {
+    .title-link {
+      font-size: 20px;
+    color: #2d2d2d;
+    text-decoration: none;
+  }
+  .title-link:hover {
+    color: #999;
+    text-decoration: none;
+  }
+  
+/* buttons */
+
+  .btn {
        padding: 10px;
        color: white;    
        border-radius: 5px;
        line-height: 1.0;
        margin: 10px;
    }
-   .jumbotron {
-       margin-bottom: 0px;
-   }
-   nav ul a:hover{
-       background-color: none;
-       color: #2d2d2d;
-       text-decoration: none;
-   }
+
+   /* Footer */
+
    a {
        color: white;
+       font-size: 18px;
    }
    a:hover {
        color: #2d2d2d;
        text-decoration: none;
    }
+   
+   /* Media queries */
 
-   h4 {
-       color: #44220b !important;
-   }
-
-   @media (max-width: 576px) {
+   @media (max-width: 768px) {
        nav .brand-logo {
            font-size: 15px;
        }
+       .jumbo-header {
+           font-size: 50px;
+       }
    }
+
+   /* Form field */
+
+   .view-ind-recipe-image { 
+        text-align: center; 
+        margin-bottom: 20px;
+   }
+   
+   #img-responsive {
+    width: 100%;
+    height: 60%;
+    }
+   

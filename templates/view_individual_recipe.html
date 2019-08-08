@@ -1,75 +1,82 @@
 {% extends 'base.html' %} {% block content %}
 
 <!-- View an Individual Recipe -->
-<div class="container">
-    <div class="row">
+<div class="container" style="line-height: 20px;">
+    <div class="view-ind-recipe-image">
+        <img src="{{ recipe.img_url }}" alt="card_image" id="img-responsive">
     </div>
     <h3 class="center-align">{{ recipe.title }}</h3><br>
+    <div class="{{url_for('insert_recipe', recipe_id=recipe._id)}}" method="POST" class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+                <div class="form-content">
+                    <h6>Category:</h6>
+                    <span>{{ recipe.recipe_category }}</span>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row">
-        <div class="{{url_for('insert_recipe', recipe_id=recipe._id)}}" method="POST" class="col s12">
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">restaurant_menu</i>
-                    <textarea type="text" name="recipe_category" id="recipe_category" readonly
-                        class="materialize-textarea">{{ recipe.recipe_category }}</textarea>
-                    <label>Category:</label>
-                </div>
+        <div class="input-field col s12">
+            <div class="form-content">
+                <h6>Ingredients:</h6>
+                <span>{{ recipe.ingredients }}</span>
+                <hr>
             </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">shopping_basket</i>
-                    <textarea type="text" name="ingredients" id="ingredients" readonly
-                        class="materialize-textarea">{{ recipe.ingredients }}</textarea>
-                    <label>Ingredients:</label>
-                </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <div class="form-content">
+                <h6>Method:</h6>
+                <span>{{ recipe.method }}</span>
+                <hr>
             </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">description</i>
-                    <textarea type="textarea" name="method" id="method" readonly
-                        class="materialize-textarea">{{ recipe.method }}</textarea>
-                    <label>Method:</label>
-                </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <div class="form-content">
+                <h6>Nutrition:</h6>
+                <span>{{ recipe.nutrition }}</span>
+                <hr>
             </div>
-
-            <div class="input-field col s6">
-                <i class="material-icons prefix">today</i>
-                <textarea type="text" name="nutrition" id="nutrition" readonly
-                    class="materialize-textarea">{{ recipe.nutrition }}</textarea>
-                <label>Nutrition:</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <div class="form-content">
+                <h6>Views:</h6>
+                <span>{{ recipe.views }}</span>
+                <hr>
             </div>
-            <div class="input-field col s6">
-                <i class="material-icons prefix">today</i>
-                <textarea type="number" name="views" id="views" readonly
-                    class="materialize-textarea">{{ recipe.views }}</textarea>
-                <label>Views:</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <div class="form-content">
+                <h6>Cooking Time:</h6>
+                <span>{{ recipe.cooking_time }}</span>
+                <hr>
             </div>
-            <div class="input-field col s6">
-                <i class="material-icons prefix">today</i>
-                <textarea type="text" name="cooking_time" id="cooking_time" readonly
-                    class="materialize-textarea">{{ recipe.cooking_time }}</textarea>
-                <label>Cooking time:</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <div class="form-content">
+                <h6>By:</h6>
+                <span>{{ recipe.author }}</span>
+                <hr>
             </div>
-            <div class="input-field col s6">
-
-                <i class="material-icons prefix">today</i>
-                <textarea type="text" name="date_entered" id="date_entered" readonly
-                    class="materialize-textarea">{{ recipe.date_entered }}</textarea>
-                <label>Date added:</label>
-
-            </div>
-
-            <div class="input-field col s6">
-                <i class="material-icons prefix">today</i>
-                <textarea type="text" name="author" id="author" readonly
-                    class="materialize-textarea">{{ recipe.author }}</textarea>
-                <label>Author:</label>
-            </div>
-            <div class="input-field col s6">
-                <i class="material-icons prefix">today</i>
-                <textarea type="url" name="img_url" id="img_url" readonly
-                    class="materialize-textarea">{{ recipe.img_url }}</textarea>
-                <label>Image URL:</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <div class="form-content">
+                <h6>Image URL:</h6>
+                <span>{{ recipe.img_url }}</span>
+                <hr>
             </div>
         </div>
     </div>

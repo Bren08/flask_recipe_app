@@ -45,24 +45,10 @@
                 </div>
                 <div class="input-field col s6">
                     <i class="material-icons prefix">poll</i>
-                    <input name="views" id="views" type="number" class="validate" value="{{ recipe.views }}">
-                    <label>Views:</label>
-                </div>
-                <div class="input-field col s6">
-                    <i class="material-icons prefix">poll</i>
                     <input name="cooking_time" id="cooking_time" type="text" class="validate"
                         value="{{ recipe.cooking_time }}">
                     <label>Cooking time:</label>
                 </div>
-                <div class="input-field col s6">
-                    <div id="matfix">
-                        <i class="material-icons prefix">today</i>
-                        <input id="date_entered" name="date_entered" type="text" class="datepicker"
-                            value="{{ date_edited }}">
-                        <label for="icon_prefix">Date edited:</label>
-                    </div>
-                </div>
-
                 <div class="input-field col s6">
                     <i class="material-icons prefix">poll</i>
                     <input id="author" name="author" type="text" class="validate" value="{{ recipe.author }}">

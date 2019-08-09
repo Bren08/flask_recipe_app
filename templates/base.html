@@ -17,7 +17,7 @@
 
   <header>
     <nav>
-      <div class="nav-wrapper  grey lighten-1">
+      <div class="nav-wrapper  grey">
         <a href="{{ url_for('index') }}" class="brand-logo">My Recipe Cookbook</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -35,22 +35,6 @@
       </div>
     </nav>
   </header>
-
-  <div class="nav-wrapper">
-    <div class="row search-input">
-      <div class="col-md-12">
-        <form action="{{ url_for('search')}}" method="POST">
-          <div class="input-field-search-recipes">
-            <input id="search" name="search" placeholder="Type keyword here to search through recipes.." required>
-            <div class="center-align">
-              <button class="btn waves-effect waves-light grey" type="submit">Search</button>
-            </div>            
-          </div>
-      </div>
-    </div>
-    </form>
-  </div>
-  <br><br>
 
   {% block content %} {% endblock %}
 

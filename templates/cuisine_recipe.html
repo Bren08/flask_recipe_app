@@ -8,15 +8,37 @@
   </div>
 </div>
 
+<div class="nav-wrapper">
+    <div class="row search-input">
+      <div class="col-md-12">
+        <form action="{{ url_for('search')}}" method="POST">
+          <div class="input-field">
+            <input id="search" name="search" placeholder="Type keyword here to search through recipes.." required>
+            <div class="center-align">
+              <button class="btn waves-effect waves-light  teal accent-3" type="submit" style="margin-bottom: 30px;">Search</button>
+            </div>            
+          </div>
+      </div>
+    </div>
+    </form>
+  </div>
+
 <div class="container">
   <div class="row">
     {% for recipe in recipes %}
     <div class="col-xs-12 col-md-4">
       <img style="height: 350px; width: 100%; border: solid 5px #ddd; border-radius: 5px; margin-top: 30px;"
         src="{{ recipe.img_url }}" alt="Card image">
-      <a href="{{ url_for('view_individual_recipe', recipe_id=recipe._id) }}"><br><br>
+      <a href="{{ url_for('view_individual_recipe', recipe_id=recipe._id) }}">
+        <br>
+        <br>
+        <span class="title-link">{{ recipe.recipe_category }}</span>
+        <br>
+        <br>
         <span class="title-link">{{ recipe.title }}</span>
-      </a><br><br>
+      </a>
+      <br>
+      <br>
       <h5>Views: {{ recipe.views }}</h5>
       <br><br>
       <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"

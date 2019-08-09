@@ -3,8 +3,8 @@
 <!-- Recipe edit form-->
 <div class="container">
     <div class="row">
-        <h2 class="col-md-12 center-align">Edit Recipe</h2><br><br><br>
-        <h3 class="center-align">{{ recipe.title }}</h3><br><br><br>
+        <h1 class="col-md-12 center-align" style="margin-top: 100px;">Edit Recipe</h1><br><br><br>
+        <h3 class="col-md-12 center-align" style="margin-top: 20px;">{{ recipe.title }}</h3><br><br><br>
         <div class="row">
             <form action="{{url_for('insert_recipe', recipe_id=recipe._id)}}" method="POST" class="col s12">
                 <div class="row">
@@ -56,7 +56,7 @@
                 </div>
                 <div class="input-field col s6">
                     <i class="material-icons prefix">poll</i>
-                    <input id="img_url" name="img_url" type="url" class="validate">
+                    <input id="img_url" name="img_url" type="url" class="validate" value="{{ recipe.img_url }}">
                     <label>Image URL:</label>
                 </div>
                 <div class="input_field col s12">

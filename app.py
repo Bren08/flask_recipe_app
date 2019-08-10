@@ -26,7 +26,7 @@ def index():
 
 @app.route('/view_categories')
 def view_categories():
-    category=type(mongo.db.categories.find())
+    category=list(mongo.db.categories.find())
     return render_template('categories.html', categories=category)
 
 @app.route('/view_recipe')

@@ -168,6 +168,9 @@ p {
            font-size: 50px;
            margin-top: 0px;
        }
+       #search {
+         font-size: smaller;
+       }
    }
 
    /* Form field */

@@ -24,11 +24,6 @@ mongo.db.recipes.create_index([('$**', 'text')])
 def index():
     return render_template('index.html')
 
-@app.route('/view_categories')
-def view_categories():
-    category=list(mongo.db.categories.find())
-    return render_template('categories.html', categories=category)
-
 @app.route('/view_recipe')
 def view_recipe():
    records=list(mongo.db.recipes.find())

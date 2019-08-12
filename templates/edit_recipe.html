@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
-<!-- Recipe edit form-->
+<!-- Edit Recipe form-->
+
 <div class="container">
     <div class="row">
         <h1 class="col-md-12 center-align" style="margin-top: 100px;">Edit Recipe</h1><br><br><br>
@@ -25,7 +26,8 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">shopping_basket</i>
-                        <textarea rows="1" cols="40" onfocus="this.rows=20;" onblur="this.rows=1;" style="resize: none;" name="ingredients" id="ingredients"
+                        <textarea rows="1" cols="40" onfocus="this.rows=20;" onblur="this.rows=1;" style="resize: none;"
+                            name="ingredients" id="ingredients"
                             class="materialize-textarea">{{ recipe.ingredients }}</textarea>
                         <label>Ingredients:</label>
                     </div>
@@ -33,8 +35,8 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">description</i>
-                        <textarea rows="1" cols="40" onfocus="this.rows=20;" onblur="this.rows=1;" style="resize: none;" name="method" id="method"
-                            class="materialize-textarea">{{ recipe.method }}</textarea>
+                        <textarea rows="1" cols="40" onfocus="this.rows=20;" onblur="this.rows=1;" style="resize: none;"
+                            name="method" id="method" class="materialize-textarea">{{ recipe.method }}</textarea>
                         <label>Method:</label>
                     </div>
                 </div>

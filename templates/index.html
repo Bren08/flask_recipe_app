@@ -5,10 +5,12 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
-
 </head>
 
 <body>
+
+  <!-- Landing page header -->
+
   <div class="background-container">
     <div class="container">
       <div class="row">
@@ -16,30 +18,23 @@
           <h1 class="landing-header">My Recipe Cookbook</h1>
         </div>
       </div>
-        <br>
-        <br>
-        <br>
-        
-          
-            
-              <div class="row">
-                  <div class="col s12">
-                  <div class="enter-button align center">
-                <button class="btn waves-effect waves-light float-left grey enter-btn" type="submit">
-                  <a href="{{ url_for('view_recipe') }}" class="enter-btn" type="submit" value="enter">Enter</a>
-                </button>
-              </div>
-              </div>
-            </div>
-          
-            
-            
-          
-        
-      
+      <br>
+      <br>
+      <br>
+
+      <!-- Enter button to access the webpage -->
+
+      <div class="row">
+        <div class="col s12">
+          <div class="enter-button align center">
+            <button class="btn waves-effect waves-light float-left grey enter-btn" type="submit">
+              <a href="{{ url_for('view_recipe') }}" class="enter-btn" type="submit" value="enter">Enter</a>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
 </body>
 
 </html>

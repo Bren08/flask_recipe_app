@@ -42,11 +42,11 @@ font-size: larger;
     text-align: center;
  }
  
- #search:-moz-placeholder { /* Firefox 18- */
+ #search:-moz-placeholder { 
     text-align: center;  
  }
  
- #search::-moz-placeholder {  /* Firefox 19+ */
+ #search::-moz-placeholder {  
     text-align: center;  
  }
  
@@ -111,11 +111,11 @@ p {
     text-align: center;
  }
  
- #username:-moz-placeholder { /* Firefox 18- */
+ #username:-moz-placeholder { 
     text-align: center;  
  }
  
- #username::-moz-placeholder {  /* Firefox 19+ */
+ #username::-moz-placeholder {  
     text-align: center;  
  }
  

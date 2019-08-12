@@ -5,11 +5,9 @@ from bson.objectid import ObjectId
 from pymongo import TEXT
 from datetime import datetime
 
-
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'recipe_manager'
 app.config["MONGO_URI"] = os.getenv("MONGO_URI")
-
 
 mongo = PyMongo(app)
 
@@ -29,14 +27,12 @@ def view_recipe():
    records=list(mongo.db.recipes.find())
    return render_template("cuisine_recipe.html", recipes=records)
 
-
 @app.route('/view_individual_recipe/<recipe_id>', methods=['GET', 'POST'])
 def view_individual_recipe(recipe_id):
     mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, {"$inc": {"views": 1}})
     the_recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     all_categories = mongo.db.categories.find()
     return render_template('view_individual_recipe.html', recipe=the_recipe, categories=all_categories)
-
 
 @app.route('/add_recipe')
 def add_recipe():
@@ -81,7 +77,6 @@ def delete_recipe(recipe_id):
 
 @app.route('/search', methods=['GET', 'POST'])
 def search():
-    
     title = request.form.get('search')
     find = ({ '$text': { '$search': title }})
     results = mongo.db.recipes.find(find)

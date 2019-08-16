@@ -30,7 +30,8 @@ First and foremost we have a very minimal aspect to navigate through. On the hom
 ### Future plans include:
 
 <ul><li>To create a secure username, password login, sign-up &amp; registration page so as to gain full access to the Edit or Delete your recipe functionality of the website, this will give the end user more peace of mind that their data they enter is safe and secure. It will give added confidence and maybe entice more users to try out My Recipe Cookbook.</li><br>
-<li>There is also an online cookery utensils/equipment store currently being devised and we hope to have that up and running within a few weeks, alongside the login/registration entry criteria.</li></ul>
+<li>There is also an online cookery utensils/equipment store currently being devised and we hope to have that up and running within a few weeks, alongside the login/registration entry criteria.</li><br>
+<li>We would like to set up or structure an area where users could interact, either in a social media setting or just a regular chat area, where users can discuss amongst themselves the in's and out's of their recipes or just to say hi, so that is in the pipeline going forward.</li></ul>
 
 ## Database Structure
     recipes: {

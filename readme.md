@@ -3,7 +3,6 @@
 The website that I have developed here is a multiple page website with full CRUD functionality as was requested. You can Create (add), Read (view), Update (edit) and Delete within the confines of the website. I have used the skills I've learned in previous modules and currently the Data Centric Module to create a Flask Website which utilises a MongoDB database to handle back end data and Python, HTML and CSS code to also handle the back end functionality and front end functionality, as well as styling the front end.<br>There is also a search field to search through recipes. You can search by just typing any keyword that might be attached to any recipe, whether its an ingredient, a way of cooking or even a food category, for e.g. Breakfast, Lunch, Dinner, Dessert or even the humble Snack.<br>So in essence the user has full functionality to view, add, edit, or delete a recipe within the website. The project can be viewed here <a href="https://flask-recipe-app.herokuapp.com">https://flask-recipe-app.herokuapp.com</a> 
 
 ## UX
-<hr>
 
 Firstly, let me direct you to the UX directory above where you will find the Strategy, Scope, Structure and Skeleton (wireframes).
 
@@ -13,7 +12,6 @@ Once the user has chosen a recipe to view, the recipe will open up on a new page
 To gauge popularity, each recipe has it's very own view counter which will tell the user which recipes on show are the most popular.
 
 ## Features
-<hr>
 
 First and foremost we have a very minimal aspect to navigate through. On the home page there are three links, Home, Add Recipe and Dashboard.
 <ol>
@@ -36,7 +34,7 @@ First and foremost we have a very minimal aspect to navigate through. On the hom
 ## Database Structure
     recipes: {
     _id: 5d51ff781c9d4400001efb6d
-    img_url: "https:goodhousekeeping.fetcha.co.za/  wp-contenuploads/2019/03/beef-stroganoff.jpg"
+    img_url: "https:goodhousekeeping.fetcha.co.za/wp-contenuploads/2019/03/beef-stroganoff.jpg"
     recipe_category: "Dinner "
     title: "Beef Stroganoff "
     ingredients: "string"
@@ -55,7 +53,6 @@ First and foremost we have a very minimal aspect to navigate through. On the hom
  ## Technologies Used
  
  ### Frameworks, Libraries, Languages:
- <hr>
 
  <ul><li><a href="https://www.w3schools.com/">HTML5</a> was used as the mark up language for the website.</li>
  <li><a href="https://www.w3schools.com/css/">CSS3</a> was used to style the website.</li>
@@ -72,20 +69,17 @@ First and foremost we have a very minimal aspect to navigate through. On the hom
  </ul>
 
  ## Testing
-<hr>
 
  Each area of the website has been tested and it seems to work well on all viewports from desktop to mobile. The user should be able to achieve their goal as the site intends, depending on whatever they choose to do when they visit.<br>I have used Dev tools in Google Chrome to test the responsiveness of the website and it appears to render well.<br>Each link is working as it should within the navigation bar and the footer then takes you to where you require to go to. Within the search function when you type in a keyword, or several keywords, you get the result back that you requested. It will return a result for the keyword that was entered and as it finds a match in as many recipes as it possibly can.<br>Each button is functioning as it should from the search bar to the edit and delete buttons. When the delete button is activated the modal created works well and flashes up a warning asking you if you intend to go ahead with your request, before the deletion takes place.<br>
  The edit and add recipe sections were tested and they perform well, a recipe that is added through the front end to the back end gets transported to the MongoDB database for storage and when that recipe is requested back again for editing, it can be edited and the after editing it populates the main viewing page (the home page) for viewing.
  Furthermore, I have used <a href="https://validator.w3.org"> W3C Code Validator</a> to verify there are no errors in my HTML or CSS. I have tried to keep the code as semantic as possible too. I have tested the website on Google Chrome, Edge and Android, so it is not tested on Safari and IOS.
 
  ## Deployment
-<hr>
 
  The project is deployed on the Heroku Cloud Platform  by using a local Git repository linked to Heroku. A MongoDB database was utilised and setup inside the Heroku platform. Credentials of the database connection are inside the requirements.txt file, it uses the os environ method to tell Heroku to look inside its own config variable (MONGOBD_URI) in order to make sure the production database connection string is not on-show and kept secret.<br>
  A Procfile is required, it is a text file named "Procfile" placed in the root of the application that lists the process types that are needed in an application. 
 
 ## Credits
-<hr>
 
 ### Media:
 
@@ -95,6 +89,5 @@ Most of the recipes and images are taken from <a href="https://www.goodhousekeep
 *This project is for educational purposes only*
 
 ## Acknowledgements
-<hr>
 
 I would like to thank everyone on the Code Institute Tutor team, the Slack Channels and most of all my mentor Spencer Barriball, who has directed me in the right direction on every topic we discussed regarding my project.

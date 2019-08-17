@@ -3,7 +3,6 @@ from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from pymongo import TEXT
-from datetime import datetime
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'recipe_manager'
@@ -11,7 +10,7 @@ app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 
 mongo = PyMongo(app)
 
-recipes =  mongo.db.recipes
+recipes = mongo.db.recipes
 the_recipe = mongo.db.recipes
 categories = mongo.db.categories
 
